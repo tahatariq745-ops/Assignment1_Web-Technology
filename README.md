@@ -57,7 +57,4 @@ Tested and working on:
 
 ```
 
----
 
-**Assignment:** Web Technologies — CLO 01  
-**Deadline:** March 2026
