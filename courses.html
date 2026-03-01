@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses – SkillSpark</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">⚡ SkillSpark</a>
+    <div class="d-flex align-items-center gap-2 order-lg-last">
+      <button id="themeBtn">🌙</button>
+      <a href="register.html" class="btn-join d-none d-lg-block">Join Free</a>
+      <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    </div>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown">Courses</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="courses.html"><i class="bi bi-code-slash me-2"></i>Web Development</a></li>
+            <li><a class="dropdown-item" href="courses.html"><i class="bi bi-phone me-2"></i>App Development</a></li>
+            <li><a class="dropdown-item" href="courses.html"><i class="bi bi-palette me-2"></i>UI/UX Design</a></li>
+            <li><a class="dropdown-item" href="courses.html"><i class="bi bi-robot me-2"></i>AI & Data Science</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE TOP -->
+<section class="page-top">
+  <div class="container">
+    <div class="section-label">48+ Courses Available</div>
+    <h1 class="section-title">Find your course</h1>
+    <p class="section-sub mx-auto">Industry-curated content. Start free for 7 days.</p>
+    <!-- Filter -->
+    <div class="d-flex flex-wrap gap-2 justify-content-center mt-3">
+      <button class="btn btn-primary btn-sm" onclick="filter('all',this)">All</button>
+      <button class="btn btn-outline-primary btn-sm" onclick="filter('web',this)">Web Dev</button>
+      <button class="btn btn-outline-primary btn-sm" onclick="filter('app',this)">App Dev</button>
+      <button class="btn btn-outline-primary btn-sm" onclick="filter('design',this)">UI/UX</button>
+      <button class="btn btn-outline-primary btn-sm" onclick="filter('ai',this)">AI & Data</button>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE CARDS -->
+<section class="section-light py-5">
+  <div class="container">
+    <div class="row g-4" id="courseGrid">
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="web">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="Full-Stack Web Development Bootcamp"
+          data-icon="🌐"
+          data-desc="HTML, CSS, JavaScript, React, Node.js, MongoDB — from zero to building full production apps."
+          data-duration="4 months" data-lessons="180 lessons" data-level="Beginner → Advanced"
+          data-price="$149" data-orig="$499" data-rating="4.9">
+          <div class="course-thumb" style="background:#e0f2fe;">🌐</div>
+          <div class="card-body">
+            <span class="badge bg-primary badge-tag mb-2">Web Dev</span>
+            <span class="badge bg-danger badge-tag mb-2 ms-1">🔥 Trending</span>
+            <h6 class="fw-bold mb-1">Full-Stack Web Development Bootcamp</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">HTML, CSS, React, Node.js, MongoDB</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>4 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>180 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$149</span> <span class="price-old">$499</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="app">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="Flutter & Dart – Mobile App Development"
+          data-icon="📱"
+          data-desc="Build cross-platform apps for iOS and Android. Covers Flutter widgets, state management, Firebase, and deployment."
+          data-duration="3 months" data-lessons="140 lessons" data-level="Intermediate"
+          data-price="$129" data-orig="$399" data-rating="4.8">
+          <div class="course-thumb" style="background:#fef3c7;">📱</div>
+          <div class="card-body">
+            <span class="badge bg-warning text-dark badge-tag mb-2">App Dev</span>
+            <span class="badge bg-info text-dark badge-tag mb-2 ms-1">✨ New</span>
+            <h6 class="fw-bold mb-1">Flutter & Dart – Mobile App Development</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Flutter, Dart, Firebase, App Store</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>3 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>140 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>4.8</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$129</span> <span class="price-old">$399</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="design">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="UI/UX Design – Figma to Product"
+          data-icon="🎨"
+          data-desc="User research, wireframing, high-fidelity design and prototyping. Build 5 case studies and a complete design system."
+          data-duration="2 months" data-lessons="95 lessons" data-level="Beginner"
+          data-price="$99" data-orig="$299" data-rating="4.9">
+          <div class="course-thumb" style="background:#fce7f3;">🎨</div>
+          <div class="card-body">
+            <span class="badge bg-success badge-tag mb-2">UI/UX</span>
+            <h6 class="fw-bold mb-1">UI/UX Design – Figma to Product</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Figma, User Research, Prototyping</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>2 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>95 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>4.9</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$99</span> <span class="price-old">$299</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="ai">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="AI & Machine Learning with Python"
+          data-icon="🤖"
+          data-desc="Python, NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch. Build 10+ real AI projects including image classifiers and NLP models."
+          data-duration="5 months" data-lessons="220 lessons" data-level="Intermediate → Advanced"
+          data-price="$199" data-orig="$699" data-rating="5.0">
+          <div class="course-thumb" style="background:#f0fdf4;">🤖</div>
+          <div class="card-body">
+            <span class="badge bg-danger badge-tag mb-2">AI & Data</span>
+            <span class="badge bg-success badge-tag mb-2 ms-1">⭐ Bestseller</span>
+            <h6 class="fw-bold mb-1">AI & Machine Learning with Python</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Python, TensorFlow, PyTorch, ML</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>5 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>220 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>5.0</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$199</span> <span class="price-old">$699</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="web">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="React.js – Modern Frontend Development"
+          data-icon="⚛️"
+          data-desc="Hooks, Context API, Redux, React Query, and Next.js. Build a deployed e-commerce site and blog as capstone projects."
+          data-duration="2.5 months" data-lessons="130 lessons" data-level="Intermediate"
+          data-price="$119" data-orig="$349" data-rating="4.8">
+          <div class="course-thumb" style="background:#eff6ff;">⚛️</div>
+          <div class="card-body">
+            <span class="badge bg-primary badge-tag mb-2">Web Dev</span>
+            <h6 class="fw-bold mb-1">React.js – Modern Frontend Development</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">React, Redux, Next.js, TypeScript</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>2.5 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>130 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>4.8</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$119</span> <span class="price-old">$349</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 citem" data-cat="app">
+        <div class="card h-100 ccard"
+          data-bs-toggle="modal" data-bs-target="#cModal"
+          data-title="React Native – Cross-Platform Apps"
+          data-icon="📲"
+          data-desc="React Native + TypeScript + Expo. Deploy to App Store and Google Play. Push notifications, animations, and payments included."
+          data-duration="3 months" data-lessons="155 lessons" data-level="Intermediate"
+          data-price="$139" data-orig="$449" data-rating="4.7">
+          <div class="course-thumb" style="background:#f5f3ff;">📲</div>
+          <div class="card-body">
+            <span class="badge bg-warning text-dark badge-tag mb-2">App Dev</span>
+            <h6 class="fw-bold mb-1">React Native – Cross-Platform Apps</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">React Native, Expo, TypeScript</p>
+            <div class="d-flex gap-3 text-muted mb-3" style="font-size:0.75rem;">
+              <span><i class="bi bi-clock me-1"></i>3 months</span>
+              <span><i class="bi bi-play-circle me-1"></i>155 lessons</span>
+              <span><i class="bi bi-star-fill text-warning me-1"></i>4.7</span>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+              <div><span class="price-tag">$139</span> <span class="price-old">$449</span></div>
+              <button class="btn-enroll">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ALL COURSES TABLE -->
+<section class="section-white py-5">
+  <div class="container reveal">
+    <div class="text-center mb-4">
+      <div class="section-label">Quick Overview</div>
+      <h2 class="section-title">All Courses at a Glance</h2>
+      <p class="section-sub mx-auto">Compare all our courses in one place — duration, price, level, and more.</p>
+    </div>
+    <div class="table-card">
+      <div class="table-title">
+        <i class="bi bi-list-ul text-primary"></i> Complete Course List
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered mb-0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Course Name</th>
+              <th>Track</th>
+              <th>Duration</th>
+              <th>Level</th>
+              <th>Rating</th>
+              <th>Price</th>
+              <th>Enroll</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Full-Stack Web Dev Bootcamp</strong></td>
+              <td><span class="badge bg-primary">Web Dev</span></td>
+              <td>4 months</td>
+              <td>Beginner</td>
+              <td>⭐ 4.9</td>
+              <td><strong>$149</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>React.js Mastery</strong></td>
+              <td><span class="badge bg-primary">Web Dev</span></td>
+              <td>2.5 months</td>
+              <td>Intermediate</td>
+              <td>⭐ 4.8</td>
+              <td><strong>$119</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Flutter & Dart</strong></td>
+              <td><span class="badge bg-warning text-dark">App Dev</span></td>
+              <td>3 months</td>
+              <td>Intermediate</td>
+              <td>⭐ 4.8</td>
+              <td><strong>$129</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>React Native</strong></td>
+              <td><span class="badge bg-warning text-dark">App Dev</span></td>
+              <td>3 months</td>
+              <td>Intermediate</td>
+              <td>⭐ 4.7</td>
+              <td><strong>$139</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>UI/UX Design – Figma</strong></td>
+              <td><span class="badge bg-success">UI/UX</span></td>
+              <td>2 months</td>
+              <td>Beginner</td>
+              <td>⭐ 4.9</td>
+              <td><strong>$99</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><strong>AI & Machine Learning</strong></td>
+              <td><span class="badge bg-danger">AI & Data</span></td>
+              <td>5 months</td>
+              <td>Advanced</td>
+              <td>⭐ 5.0</td>
+              <td><strong>$199</strong></td>
+              <td><button class="btn-enroll" onclick="window.location='register.html'">Enroll</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE MODAL -->
+<div class="modal fade" id="cModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="mTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex align-items-start gap-3 mb-4">
+          <span id="mIcon" style="font-size:3rem;line-height:1;"></span>
+          <p id="mDesc" class="text-muted mb-0" style="font-size:0.9rem;line-height:1.7;"></p>
+        </div>
+        <!-- Modal details table -->
+        <div class="table-card">
+          <div class="table-responsive">
+            <table class="table table-bordered mb-0">
+              <thead><tr><th>Duration</th><th>Lessons</th><th>Level</th><th>Rating</th><th>Certificate</th><th>Access</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td id="mDur"></td>
+                  <td id="mLes"></td>
+                  <td id="mLvl"></td>
+                  <td id="mRat"></td>
+                  <td><i class="bi bi-check-circle-fill text-success"></i> Yes</td>
+                  <td><i class="bi bi-infinity text-primary"></i> Lifetime</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between flex-wrap gap-2">
+        <div>
+          <span class="price-tag" id="mPrice"></span>
+          <span class="text-muted ms-2" id="mOrig" style="text-decoration:line-through;font-size:0.85rem;"></span>
+          <span class="text-muted ms-1" style="font-size:0.78rem;">· Lifetime access</span>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <a href="register.html" class="btn-primary-ss" style="font-size:0.85rem;padding:0.45rem 1rem;">
+            <i class="bi bi-rocket-takeoff"></i> Enroll Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <span class="footer-brand">⚡ SkillSpark</span>
+        <p class="footer-desc">Practical tech education for university students.</p>
+        <div class="mt-3">
+          <a class="soc-btn" href="#"><i class="bi bi-twitter-x"></i></a>
+          <a class="soc-btn" href="#"><i class="bi bi-linkedin"></i></a>
+          <a class="soc-btn" href="#"><i class="bi bi-github"></i></a>
+          <a class="soc-btn" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Pages</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Support</div>
+        <ul class="footer-links">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-heading">Newsletter</div>
+        <p style="color:var(--muted);font-size:0.83rem;margin-bottom:0.8rem;">Get weekly tips and course updates.</p>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="your@email.com">
+          <button class="btn-primary-ss" style="border-radius:0 8px 8px 0;padding:0.6rem 1rem;font-size:0.85rem;" type="button">Go</button>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-4 mb-3">
+    <div class="text-center" style="color:var(--muted);font-size:0.78rem;">© 2026 SkillSpark. All rights reserved.</div>
+  </div>
+</footer>
+
+<button id="goTop"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const btn=document.getElementById('themeBtn');
+  function setTheme(t){document.body.classList.toggle('dark',t==='dark');btn.textContent=t==='dark'?'☀️':'🌙';localStorage.setItem('ss-theme',t);}
+  btn.addEventListener('click',()=>setTheme(document.body.classList.contains('dark')?'light':'dark'));
+  setTheme(localStorage.getItem('ss-theme')||'light');
+
+  const goTop=document.getElementById('goTop');
+  window.addEventListener('scroll',()=>goTop.classList.toggle('show',scrollY>300));
+  goTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+  new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');})},{threshold:0.1})
+    .observe(document.querySelector('.reveal')||document.body);
+  document.querySelectorAll('.reveal').forEach(el=>{
+    new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');})},{threshold:0.1}).observe(el);
+  });
+
+  // Filter
+  function filter(cat, el) {
+    document.querySelectorAll('[onclick^="filter"]').forEach(b=>{b.className='btn btn-outline-primary btn-sm';});
+    el.className='btn btn-primary btn-sm';
+    document.querySelectorAll('.citem').forEach(item=>{
+      item.style.display=(cat==='all'||item.dataset.cat===cat)?'':'none';
+    });
+  }
+
+  // Modal
+  document.getElementById('cModal').addEventListener('show.bs.modal', e => {
+    const d = e.relatedTarget.dataset;
+    document.getElementById('mTitle').textContent = d.title;
+    document.getElementById('mIcon').textContent = d.icon;
+    document.getElementById('mDesc').textContent = d.desc;
+    document.getElementById('mDur').textContent = d.duration;
+    document.getElementById('mLes').textContent = d.lessons;
+    document.getElementById('mLvl').textContent = d.level;
+    document.getElementById('mRat').textContent = '⭐ ' + d.rating;
+    document.getElementById('mPrice').textContent = d.price;
+    document.getElementById('mOrig').textContent = d.orig;
+  });
+</script>
+</body>
+</html>
